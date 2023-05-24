@@ -13,6 +13,6 @@ filter_delivered(df)
 A dataframe
 }
 \description{
-This function filters only the orders that have been delivered, and removes from a dataframe the orders that have been cancelled.
-    It does so by using the "tracking_status" variable that is present in Delivraide data.
+This function filters from the dataset the orders that have been delivered, and removes those that have been cancelled.
+ It does so by using the "tracking_status" variable that is present in Delivraide data.
 }
