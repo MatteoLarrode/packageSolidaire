@@ -7,11 +7,12 @@
 filter_delivered(df)
 }
 \arguments{
-\item{df}{A dataframe of orders with a "tracking_status" variable}
+\item{df}{A dataframe of Delivraide orders}
 }
 \value{
 A dataframe
 }
 \description{
-Filter delivered kits
+This function filters only the orders that have been delivered, and removes from a dataframe the orders that have been cancelled.
+    It does so by using the "tracking_status" variable that is present in Delivraide data.
 }
