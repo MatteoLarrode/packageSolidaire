@@ -1,0 +1,52 @@
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+orders <- read_csv("Resources/latest_orders_data/orders_2205.csv")
+
+
+#orders completed after app was released
+orders_delivered <- orders %>%
+  filter(tracking_status == 3) %>%
+  #waiting time
+  mutate(waiting_hours = as.numeric((updatedAt - createdAt)/60),
+         waiting_days = round(waiting_hours/24))
+
+#list variations of Nexity to add them to their respective cities
+strings_Paris <- c("bagnolet", "tessier")
+strings_Grenoble <- c("weill")
+strings_Strasbourg <- c("winston")
+
+#fix city names
+orders_delivered_new <- orders_delivered %>%
+  mutate(city = case_when(
+    str_detect(city, "Montpellier") ~ "Montpellier",
+    str_detect(city, "Toulouse") ~ "Toulouse",
+    str_detect(str_to_lower(city), paste(strings_Paris, collapse = "|")) ~ "Paris",
+    str_detect(str_to_lower(city), paste(strings_Grenoble, collapse = "|")) ~ "Grenoble",
+    str_detect(str_to_lower(city), paste(strings_Strasbourg, collapse = "|")) ~ "Strasbourg",
+    TRUE ~ city)) %>%
+  mutate(city = ifelse(city == "Montreuil", "Paris", city))
+
+
+#group by city & month
+monthly_orders_city <- orders_delivered_new %>%
+  mutate(month_year = format(updatedAt, "%Y-%m")) %>%
+  complete(city, month_year) %>%
+  group_by(month_year, city) %>%
+  summarise(month_deliveries = n()) %>%
+  mutate(month_deliveries = ifelse(month_deliveries == 1, 0, month_deliveries))
+
+
+#make table long
+# Assuming your dataframe is named "df"
+monthly_orders_city_wide <- monthly_orders_city %>%
+  pivot_wider(names_from = city, values_from = month_deliveries, values_fill = 0)
+
+# Assuming your dataframe is named "new_df"
+html_table <- monthly_orders_city_wide %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+html_table
+

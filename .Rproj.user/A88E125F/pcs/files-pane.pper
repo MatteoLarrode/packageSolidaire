@@ -2,8 +2,8 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": false
+            "ascending": true
         }
     ],
-    "path": "~/Desktop/EquipageSolidaire/packageSolidaire/packageSolidaire"
+    "path": "~/Desktop/EquipageSolidaire/EquipageSolidaire_Stats/Useful_Functions"
 }
