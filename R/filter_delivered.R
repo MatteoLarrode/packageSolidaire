@@ -1,6 +1,6 @@
 #' Filter delivered kits
 #'
-#' @param df A dataframe of orders with a "tracking_status" variable
+#' @param df A dataframe of Equipage Solidaire orders with a "tracking_status" variable
 #'
 #' @return A dataframe
 #' @export
