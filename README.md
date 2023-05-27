@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-packageSolidaire is a companion for the staff of L'Equipage Solidaire and Delivraide who work with the orders data from the mobile application. 
+[{packageSolidaire}](https://matteolarrode.github.io/packageSolidaire/) is a companion for the staff of L'Equipage Solidaire and Delivraide who work with the orders data from the mobile application. 
 
 It includes two main set of functions:
 
@@ -18,3 +18,7 @@ You can install the development version of packageSolidaire from GitHub with:
 # install.packages("devtools")
 devtools::install_github("MatteoLarrode/packageSolidaire")
 ```
+
+## Documentation
+
+More details on the package on this [documentation web page](https://matteolarrode.github.io/packageSolidaire/)
