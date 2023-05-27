@@ -21,4 +21,4 @@ devtools::install_github("MatteoLarrode/packageSolidaire")
 
 ## Documentation
 
-More details on the package on this [documentation web page](https://matteolarrode.github.io/packageSolidaire/)
+More details on the package on this [documentation web page](https://matteolarrode.github.io/packageSolidaire/).
