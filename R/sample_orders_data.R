@@ -1,0 +1,26 @@
+#' Sample Data of Orders on the Deliveraide Mobile Application
+#'
+#' A \code{tibble} containing 20 sample orders in the format of data exported from the mobile application.
+#' The data can be used for testing and running of examples. The variables are as follows:
+#'
+#' @format A \code{tibble} with 20 rows and 17 variables:
+#' \describe{
+#'    \item{city}{Name of the city where the order is placed}
+#'    \item{zip}{ZIP code of the city where the order is placed}
+#'    \item{meat}{Indicator of whether the order includes meat (1 = includes meat, 0 = does not include meat)}
+#'    \item{fish}{Indicator of whether the order includes fish (1 = includes fish, 0 = does not include fish)}
+#'    \item{porc}{Indicator of whether the order includes pork (1 = includes pork, 0 = does not include pork)}
+#'    \item{is_completed}{Indicator of whether the order is completed (1 = completed, 0 = not completed)}
+#'    \item{tracking_status}{Status of order tracking (0 = not yet accepted, 1 = waiting for time slot, 2 = time slot convened with courier, 3 = delivered)}
+#'    \item{createdAt}{Date and time of when the order was created}
+#'    \item{updatedAt}{Date and time of when the order was last updated (if tracking_status == 3, then date and time of kit delivered)}
+#'    \item{date_accepted}{Date and time of when the order was accepted}
+#'    \item{date_request}{Date and time of when the order request was made}
+#'    \item{priority_score}{Priority score assigned to the beneficiary}
+#'    \item{is_alone}{Indicator of whether the beneficiary lives alone (1 = alone, 0 = not alone)}
+#'    \item{is_apl}{Indicator of whether the beneficiary earns APL (1 = APL, 0 = not APL)}
+#'    \item{is_boursier}{Indicator of whether the beneficiary is a scholarship recipient (1 = boursier, 0 = not boursier)}
+#'    \item{is_handicap}{Indicator of whether the beneficiary has a disability (1 = disability, 0 = not disability)}
+#'    \item{is_winning}{Indicator of whether the beneficiary is in the active workforce (1 = winning, 0 = not winning)}
+#' }
+"sample_orders_data"
