@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-[{packageSolidaire}](https://matteolarrode.github.io/packageSolidaire/) is a companion for the staff of L'Equipage Solidaire and Delivraide who work with the orders data from the mobile application. 
+{[packageSolidaire](https://matteolarrode.github.io/packageSolidaire/)} is a companion for the staff of L'Equipage Solidaire and Delivraide who work with the orders data from the mobile application. 
 
 It includes two main set of functions:
 
