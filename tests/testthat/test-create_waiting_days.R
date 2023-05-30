@@ -15,6 +15,8 @@ test_that("create_waiting_days correctly computes waiting time", {
   expect_equal(result$waiting_days, c(3, 4, 5))
 })
 
+
+
 test_that("create_waiting_days cannot handle non-date inputs", {
   # Create a sample dataframe with non-date inputs
   df <- data.frame(
@@ -25,6 +27,8 @@ test_that("create_waiting_days cannot handle non-date inputs", {
   # throws error when function is called
   expect_error(create_waiting_days(df), info = "An error should be thrown for columns class being strings, not dates.")
 })
+
+
 
 test_that("create_waiting_days handles different column names", {
   # Create a sample dataframe with different column names

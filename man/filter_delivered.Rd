@@ -12,10 +12,10 @@ filter_delivered(df, col_name = tracking_status)
 \item{col_name}{The column to use for filtering (default: tracking_status). Note: do not add quotes around the column name.}
 }
 \value{
-A dataframe
+The input dataframe filtered to only include orders that have been delivered.
 }
 \description{
-This function filters from the dataset the orders that have been delivered, and removes those that have been cancelled.
+Filters from the dataset the orders that have been delivered, and removes those that have been cancelled.
   It does so by using the specified tracking variable, defaulting to "tracking_status", that is present in Delivraide data.
 }
 \examples{
@@ -24,8 +24,5 @@ data(sample_orders_data)
 
 # Filter the delivered orders
 delivered_orders <- filter_delivered(sample_orders_data)
-
-# Print the filtered dataframe
-print(delivered_orders)
 
 }
