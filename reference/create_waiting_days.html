@@ -63,7 +63,7 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>The input dataframe with an additional column "waiting_days" representing the waiting time in days.</p>
+<p>A dataframe with an additional column "waiting_days" representing the waiting time in days.</p>
     </div>
 
     <div class="section level2">
@@ -72,16 +72,15 @@
 <span class="r-in"><span><span class="co"># Load the sample orders data</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">sample_orders_data</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">#Filter delivered orders</span></span></span>
+<span class="r-in"><span><span class="co"># Filter delivered orders</span></span></span>
 <span class="r-in"><span><span class="va">delivered_orders</span> <span class="op">&lt;-</span> <span class="fu"><a href="filter_delivered.html">filter_delivered</a></span><span class="op">(</span><span class="va">sample_orders_data</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">#Add waiting days variable</span></span></span>
+<span class="r-in"><span><span class="co"># Add waiting days variable</span></span></span>
 <span class="r-in"><span><span class="va">delivered_orders_new</span> <span class="op">&lt;-</span> <span class="fu">create_waiting_days</span><span class="op">(</span><span class="va">delivered_orders</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">#You can also use pipes:</span></span></span>
-<span class="r-in"><span><span class="va">delivered_orders_new2</span> <span class="op">&lt;-</span> <span class="va">delivered_orders</span><span class="op"><a href="pipe.html">%&gt;%</a></span></span></span>
-<span class="r-in"><span>    <span class="fu">create_waiting_days</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># You can also use pipes:</span></span></span>
+<span class="r-in"><span><span class="va">delivered_orders_new2</span> <span class="op">&lt;-</span> <span class="va">delivered_orders</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span>  <span class="fu">create_waiting_days</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
