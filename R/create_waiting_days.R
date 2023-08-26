@@ -16,29 +16,27 @@
 #'
 #' @examples
 #'
-#'# Load the sample orders data
+#' # Load the sample orders data
 #' data(sample_orders_data)
 #'
-#' #Filter delivered orders
+#' # Filter delivered orders
 #' delivered_orders <- filter_delivered(sample_orders_data)
 #'
-#' #Add waiting days variable
+#' # Add waiting days variable
 #' delivered_orders_new <- create_waiting_days(delivered_orders)
 #'
-#' #You can also use pipes:
-#' delivered_orders_new2 <- delivered_orders%>%
-#'     create_waiting_days()
+#' # You can also use pipes:
+#' delivered_orders_new2 <- delivered_orders |>
+#'   create_waiting_days()
 #'
-#'
-create_waiting_days <- function(df, creat_date = createdAt, deliv_date = updatedAt){
-
+create_waiting_days <- function(df, creat_date = createdAt, deliv_date = updatedAt) {
   stopifnot("Input must be a dataframe" = is.data.frame(df))
-  stopifnot("Orders creation and delivery variables must be unquoted column names" = (!is.character(substitute(creat_date))&&!is.character(substitute(deliv_date))))
+  stopifnot("Orders creation and delivery variables must be unquoted column names" = (!is.character(substitute(creat_date)) && !is.character(substitute(deliv_date))))
 
   stopifnot("Creation and delivery columns must be in a date format" = lubridate::is.instant(df[[substitute(creat_date)]]) && is.instant(df[[substitute(deliv_date)]]))
 
-  df <- df %>%
-    dplyr::mutate(waiting_days = round(as.numeric(difftime({{deliv_date}}, {{creat_date}}, units = "days")), 0))
+  df <- df |>
+    mutate(waiting_days = round(as.numeric(difftime({{ deliv_date }}, {{ creat_date }}, units = "days")), 0))
 
   return(df)
 }

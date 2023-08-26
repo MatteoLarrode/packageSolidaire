@@ -3,7 +3,7 @@ library(lubridate)
 
 # Set the number of rows in sample dataset
 num_rows <- 20
-set.seed(123)  # Set seed for reproducibility
+set.seed(123) # Set seed for reproducibility
 
 
 sample_orders_data <- tibble(
@@ -19,13 +19,17 @@ sample_orders_data <- tibble(
     94230, 31000, 38400, 38000, 31000,
     75016, 67000, 76600, 77000, 69002
   ),
-  meat =  sample(0:1, num_rows, replace = TRUE),
+  meat = sample(0:1, num_rows, replace = TRUE),
   fish = sample(0:1, num_rows, replace = TRUE),
   porc = sample(0:1, num_rows, replace = TRUE),
-  is_completed = c(0, 0, 1, 1, 0, 0, 1, 0, 0, 0,
-                   1, 0, 0, 1, 1, 0, 1, 1, 0, 1),
-  tracking_status = c(0, 0, 2, 3, 0, 0, 3, 0, 0, 0,
-                      3, 2, 1, 3, 3, 0, 3, 3, 1, 3),
+  is_completed = c(
+    0, 0, 1, 1, 0, 0, 1, 0, 0, 0,
+    1, 0, 0, 1, 1, 0, 1, 1, 0, 1
+  ),
+  tracking_status = c(
+    0, 0, 2, 3, 0, 0, 3, 0, 0, 0,
+    3, 2, 1, 3, 3, 0, 3, 3, 1, 3
+  ),
   createdAt = ymd_hms(c(
     "2023-02-23 11:19:04", "2023-02-24 20:37:35",
     "2022-11-20 12:19:33", "2023-01-16 08:30:49",
@@ -75,7 +79,8 @@ sample_orders_data <- tibble(
   is_winning = sample(0:1, num_rows, replace = TRUE),
   priority_score = ifelse(is_alone == 1, 2, 0) + ifelse(is_boursier == 1, 5, 0) +
     ifelse(is_apl == 1, 2, 0) + ifelse(is_winning == 1, -1, 0) +
-    ifelse(is_handicap == 1, 100, 0))
+    ifelse(is_handicap == 1, 100, 0)
+)
 
 
 usethis::use_data(sample_orders_data, overwrite = TRUE)

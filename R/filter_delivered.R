@@ -19,12 +19,10 @@
 #' # Filter the delivered orders
 #' delivered_orders <- filter_delivered(sample_orders_data)
 #'
-
 filter_delivered <- function(df, col_name = tracking_status) {
-
   stopifnot("Input must be a dataframe" = is.data.frame(df))
   stopifnot("col_name must be an unquoted column name" = !is.character(substitute(col_name)))
 
-  df %>%
-    dplyr::filter({{col_name}} == 3)
+  df |>
+    filter({{ col_name }} == 3)
 }
