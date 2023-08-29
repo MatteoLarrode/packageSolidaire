@@ -13,7 +13,10 @@
     <loc>https://matteolarrode.github.io/packageSolidaire/index.html</loc>
   </url>
   <url>
-    <loc>https://matteolarrode.github.io/packageSolidaire/reference/create_waiting_days.html</loc>
+    <loc>https://matteolarrode.github.io/packageSolidaire/reference/count_orders_dpt.html</loc>
+  </url>
+  <url>
+    <loc>https://matteolarrode.github.io/packageSolidaire/reference/create_waiting_days_var.html</loc>
   </url>
   <url>
     <loc>https://matteolarrode.github.io/packageSolidaire/reference/filter_delivered.html</loc>
