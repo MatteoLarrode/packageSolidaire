@@ -24,3 +24,18 @@
 #'    \item{is_winning}{Indicator of whether the beneficiary is in the active workforce (1 = winning, 0 = not winning)}
 #' }
 "sample_orders_data"
+
+#' Departments (2018)
+#'
+#' A dataset containing 2018 department geometries and their associated names and codes.
+#'
+#' @format A data frame of class "sf" with 102 rows and 4 variables
+#' \describe{
+#'    \item{dpt18_name}{Department name}
+#'    \item{dpt18_nuts3}{Department NUTS3 level code}
+#'    \item{dpt18_code}{Department INSEE code}
+#'    \item{geometry}{Multipolygon coordinates}
+#' }
+#' @source \url{https://www.data.gouv.fr/fr/datasets/contours-des-departements-francais-issus-d-openstreetmap/}
+#'
+"boundaries_dpt18"
