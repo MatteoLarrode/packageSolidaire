@@ -6,7 +6,10 @@
 #' @param zip The column for zip code (default: zip). Note: do not add quotes around the column name.
 #'
 #' @return A dataframe with the number of orders for each department.
+#' @export
+#' 
 #' @import dplyr
+#' @import stringr
 #'
 #' @examples
 #' #' # Load the sample orders data
@@ -32,7 +35,11 @@ count_orders_dpt <- function(df, zip = zip) {
 #' @param city The column for city name (default: city). Note: do not add quotes around the column name.
 #'
 #' @return A dataframe with the number of orders for each department.
+#' @export
+#' 
 #' @import dplyr
+#' @import stringr
+#'
 #'
 #' @examples
 #' #' # Load the sample orders data

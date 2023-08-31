@@ -9,8 +9,8 @@
 #'
 #' @return A dataframe with an additional column "waiting_days" representing the waiting time in days.
 #'
-#' @importFrom dplyr mutate
-#' @importFrom lubridate is.instant
+#' @import dplyr
+#' @import lubridate
 #'
 #' @export
 #'

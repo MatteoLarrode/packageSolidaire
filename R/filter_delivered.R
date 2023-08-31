@@ -8,7 +8,7 @@
 #'
 #' @return The input dataframe filtered to only include orders that have been delivered.
 #'
-#' @importFrom dplyr filter
+#' @import dplyr
 #'
 #' @export
 #'
