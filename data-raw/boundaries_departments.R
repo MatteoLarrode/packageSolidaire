@@ -56,7 +56,6 @@ if (dpt18 |>
   stop("Incorrect geometry types")
 }
 
-
 # Check object is below 50Mb GitHub warning limit
 if (obj_size(dpt18) > 50000000) {
   stop("File is too large")
